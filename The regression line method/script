@@ -1,0 +1,80 @@
+# Initialize a data frame to store the results
+df_results <- data.frame()
+
+# Process each pair consisting of the first column and columns a through b
+for (i in 2:a) {  # Pair: column 1 and column i 
+  
+  # Define the fixed endpoint based on the peak amplitude position in column i
+  fixed_N <- which.min("x"[y:z, i]) + y
+  
+  # Initialize vectors/lists to store R-squared values and lm models
+  r2_results <- numeric(0)
+  model_list <- list()
+  
+  # Fit linear regression while sliding the start point from c to d
+  for (start_row in b:c) {
+    
+    # Fit linear model for the current segment
+    current_lm <- lm("x"[start_row:fixed_N, i] ~ "x"[start_row:fixed_N, 1])
+    
+    # Extract R-squared value
+    r2_val <- summary(current_lm)$r.squared
+    
+    # Store R-squared value and the fitted model
+    r2_results <- c(r2_results, r2_val)
+    model_list[[length(model_list) + 1]] <- current_lm
+  }
+  
+  # Identify the index corresponding to the maximum R-squared
+  max_r2_index <- which.max(r2_results)
+  max_r2 <- max(r2_results)
+  
+  # Select the optimal regression model with the highest R-squared
+  lm_model <- model_list[[max_r2_index]]
+  
+  # Define the optimal start row
+  range_start <- y + max_r2_index 
+  range_end <- fixed_N
+  
+  # Extract the regression coefficients (intercept and slope)
+  coefficients <- coef(lm_model)
+  
+  # Calculate the absolute values of the intercept and slope
+  abs_intercept <- abs(coefficients[1])
+  abs_slope <- abs(coefficients[2])
+  
+  # Calculate the ratio of the absolute intercept to the absolute slope
+  result <- abs_intercept / abs_slope
+  
+  # Store the results in the data frame
+  df_results <- rbind(df_results, data.frame(
+    Model = i,
+    Absolute_Intercept = abs_intercept,
+    Absolute_Slope = abs_slope,
+    Intercept_Slope_Ratio = result,
+    Max_R_Squared = max_r2,
+    Correlation_Start_Row = range_start,
+    Correlation_End_Row = range_end
+  ))
+  
+  # Plot the waveforms and the fitted regression line
+  plot(x[d:e, c(1, i)],
+       xlim = c(-500, 100),
+       ylim = c(0.5, -4),
+       xlab = "",
+       ylab = "Amplitude (µV)",
+       type = "l",
+       lwd = 4,
+       cex.axis = 2,
+       cex.lab = 1.5,
+       font.lab = 2)
+  
+  # Add the zero-amplitude reference line
+  abline(h = 0)
+  
+  # Add the fitted regression line
+  abline(lm_model, col = "black")
+}
+
+# Display the results
+print(df_results)
