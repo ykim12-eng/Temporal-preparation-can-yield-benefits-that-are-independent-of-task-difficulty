@@ -10,16 +10,16 @@ The repository is organized into three main folders. For detailed descriptions, 
 1. Experiment_1
 Contains the data for Experiment 1:
 
-Behavioral Data: A workbook containing the master summary (mean RTs, % errors) and trial-by-trial logs for all four conditions (FP600/simple, FP600/complex, FP3000/simple, FP3000/complex) per subject.
+ ・Behavioral Data: A workbook containing the master summary (mean RTs, % errors) and trial-by-trial logs for all four conditions (FP600/simple, FP600/complex, FP3000/simple, FP3000/complex) per subject.
 
-ERP Data: Individual subject averaged waveforms formatted for time-series analysis.
+ ・ERP Data: Individual subject averaged waveforms formatted for time-series analysis.
 
 2. Experiment_2
 Contains the data for Experiment 2:
 
-Behavioral Data: Reaction times, error rates, and trial-by-trial logs for Experiment 2.
+ ・Behavioral Data: Reaction times, error rates, and trial-by-trial logs for Experiment 2.
 
-ERP Data: Individual subject averaged waveforms for Experiment 2.
+ ・ERP Data: Individual subject averaged waveforms for Experiment 2.
 
 3. The regression line method
 Contains the custom R script for estimating ERP/LRP onset latencies. The script utilizes an Optimized Segmented Regression Method to dynamically identify the most linear portion of the waveform slope and calculate the zero-crossing point.
