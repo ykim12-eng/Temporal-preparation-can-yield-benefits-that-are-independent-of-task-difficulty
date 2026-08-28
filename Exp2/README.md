@@ -1,4 +1,4 @@
-This repository contains the behavioral dataset (Reaction Time and Error Rates) and the preprocessed Event-Related Potential (ERP) dataset used in the study: "Kimura et al., Exp2".
+This repository contains the behavioral dataset (Reaction Time and Error Rates) and the preprocessed Event-Related Potential (ERP) dataset used in the study: "Exp2".
 
 ◆Behavioral Dataset
 
