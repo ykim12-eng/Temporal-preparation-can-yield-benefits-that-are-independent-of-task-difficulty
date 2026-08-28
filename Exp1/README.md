@@ -1,4 +1,4 @@
-This repository contains the behavioral dataset (Reaction Time and Error Rates) and the preprocessed Event-Related Potential (ERP) dataset used in the study: "Kimura et al., Exp2".
+This repository contains the behavioral dataset (Reaction Time and Error Rates) and the preprocessed Event-Related Potential (ERP) dataset used in the study: "Kimura et al., Exp1".
 
 ◆Behavioral Dataset
 
@@ -20,13 +20,13 @@ From the second sheet onwards, each sheet corresponds to a single subject and co
 
 To organize the four experimental conditions within a single subject's sheet, the data is arranged horizontally into four 5-column blocks:
 
-・Columns A–E: FP600/easy
+・Columns A–E: FP600/simple
 
-・Columns F–J: FP600/hard
+・Columns F–J: FP600/complex
 
-・Columns K–O: FP3000/easy
+・Columns K–O: FP3000/simple
 
-・Columns P–T: FP3000/hard
+・Columns P–T: FP3000/complex
 
 ●Column Layout (Within Each 5-Column Block)
 
@@ -49,13 +49,13 @@ In the published manuscript, the statistical analysis for LRP and N1 interval we
 
 ●Sheets (Experimental Conditions)
 
-・Sheet 1 FP600/easy
+・Sheet 1 FP600/simple
 
-・Sheet 2 FP600/hard
+・Sheet 2 FP600/complex
 
-・Sheet 3 FP3000/easy
+・Sheet 3 FP3000/simple
 
-・Sheet 4 FP3000/hard
+・Sheet 4 FP3000/complex
 
 ●Column Layout
 
