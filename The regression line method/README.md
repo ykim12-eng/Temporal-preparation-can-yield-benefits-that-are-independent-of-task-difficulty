@@ -1,7 +1,5 @@
 This R script provides a data-driven method for estimating the onset latency of the Lateralized Readiness Potential (LRP). Required Data Format (which is in the other Repository)
 
-x: The main data frame.
-
 Column 1: Time values (e.g., milliseconds).
 
 Columns 2 to a: Amplitude data (µV) for each subject or condition. (Note: The data must be applied baseline-correction prior to running this script.)
