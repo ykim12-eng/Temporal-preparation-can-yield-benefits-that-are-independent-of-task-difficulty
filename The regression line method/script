@@ -11,7 +11,7 @@ for (i in 2:a) {  # Pair: column 1 and column i
   r2_results <- numeric(0)
   model_list <- list()
   
-  # Fit linear regression while sliding the start point from c to d
+  # Fit linear regression while sliding the start point from b to c
   for (start_row in b:c) {
     
     # Fit linear model for the current segment
@@ -33,7 +33,7 @@ for (i in 2:a) {  # Pair: column 1 and column i
   lm_model <- model_list[[max_r2_index]]
   
   # Define the optimal start row
-  range_start <- y + max_r2_index 
+  range_start <- b + max_r2_index 
   range_end <- fixed_N
   
   # Extract the regression coefficients (intercept and slope)
